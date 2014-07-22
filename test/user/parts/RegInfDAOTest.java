@@ -205,7 +205,7 @@ public class RegInfDAOTest {
 			// updateを実行
 			rid.update("002", "Michael", "29");
 			
-			// INSERTで書き込んだ内容を指定して読み出す
+			// UPDATEで更新した内容を指定して読み出す
 			ps = db.prepareStatement("SELECT * FROM registrants WHERE registrant_id = '002'");
 			rs = ps.executeQuery();
 			String str;
@@ -264,7 +264,7 @@ public class RegInfDAOTest {
 			// deleteを実行
 			rid.delete("001");
 			
-			// INSERTで書き込んだ内容を指定して読み出す
+			// DELETEした部分がrs.next()でfalseになるかを確認
 			ps = db.prepareStatement("SELECT * FROM registrants WHERE registrant_id = '001'");
 			rs = ps.executeQuery();
 			boolean i = rs.next();
@@ -381,7 +381,7 @@ public class RegInfDAOTest {
 			// getNextIdを実行
 			String actual = rid.getNextId();
 			
-			// INSERTで書き込んだ内容を指定して読み出す
+			// DBが空のときに、getNextIdを起動したときの動作を確認
 			System.out.println("assertThatを起動↓");
 			System.out.println("期待値⇒"+expected_UT002_005);
 			System.out.println("DBから取得した文字列⇒"+actual);
