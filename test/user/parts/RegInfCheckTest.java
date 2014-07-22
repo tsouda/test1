@@ -32,10 +32,13 @@ public class RegInfCheckTest {
 		hanni = "年齢は(16-60)の範囲で入力してください。<br />";
 		hanni_hankaku = "年齢は数値(半角)で入力してください。<br />年齢は(16-60)の範囲で入力してください。<br />";
 		touroku = "登録可能なID（999）を超えています。管理者に問い合わせてください。<br />";
+		System.out.println("UT001開始");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		System.out.println("UT001終了");
+		System.out.println();
 	}
 
 	@Before

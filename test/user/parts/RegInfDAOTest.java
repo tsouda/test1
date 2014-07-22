@@ -64,6 +64,8 @@ public class RegInfDAOTest {
 			System.out.println("失敗");
 		}
 		finally{
+			System.out.println();
+			System.out.println("UT002開始");
 			System.out.println("初期設定終わり");
 		}
 	}
@@ -83,7 +85,7 @@ public class RegInfDAOTest {
 		rid.insert("001", "鈴木太郎", "35");
 		rid.insert("002", "Tommy", "25");
 		rid.insert("003", "山田花子", "30");
-	
+		System.out.println("UT002終了");
 	}
 
 	@Before
@@ -267,17 +269,7 @@ public class RegInfDAOTest {
 			rs = ps.executeQuery();
 			boolean i = rs.next();
 			System.out.println("assrtThatを実行!");
-			assertThat(i,is(false));
-	//		String str;
-	//		while(rs.next()){
-	//			str = rs.getString("registrant_id");
-	//			str = str+rs.getString("registrant_name");
-	//			str = str+rs.getString("registrant_age");
-	//			System.out.println(str);
-	//			System.out.println("assrtThatを実行!");
-	//			assertThat(str,is(expected_UT003_003));
-	//		}
-	
+			assertThat(i,is(false));	
 		}
 		catch(Exception e){
 			System.out.println("失敗");
@@ -374,7 +366,7 @@ public class RegInfDAOTest {
 		ResultSet rs = null;
 		RegInfDAO rid = new RegInfDAO();
 		
-		// deleteを実行
+		// deleteを実行(UT002-005の前提条件として、DBが空である必要があるため)
 		rid.delete("001");
 		rid.delete("002");
 		rid.delete("003");

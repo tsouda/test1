@@ -22,10 +22,12 @@ public class OutLogTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		System.out.println("UT003äJén");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		System.out.println("UT003èIóπ");
 	}
 
 	@Before
