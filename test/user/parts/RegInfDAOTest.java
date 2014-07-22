@@ -74,7 +74,7 @@ public class RegInfDAOTest {
 	public static void tearDownAfterClass() throws Exception {
 		RegInfDAO rid = new RegInfDAO();
 		
-		// 全試験項目終了後開始前に、DBを元の状態に戻す。
+		// 全試験項目終了後に、DBを元の状態に戻す。
 		// deleteを実行
 		rid.delete("001");
 		rid.delete("002");
